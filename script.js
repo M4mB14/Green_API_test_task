@@ -45,9 +45,15 @@ function sendMessage() {
 function sendFileByUrl() {
     const phone = document.getElementById("phoneNumber").value;
     const fileUrl = document.getElementById("fileUrl").value;
+    
     if (phone && fileUrl) {
-        callApi("sendFileByUrl", "POST", { chatId: phone + "@c.us", urlFile: fileUrl });
+        callApi("sendFileByUrl", "POST", {
+            chatId: phone + "@c.us",
+            urlFile: fileUrl,
+            fileName: fileUrl.split('/').pop(),
+            caption: ""
+        });
     } else {
-        alert("Введите номер и URL файла!");
+        document.getElementById("error").textContent = "Введите номер и URL файла!";
     }
 }
