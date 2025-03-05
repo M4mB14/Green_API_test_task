@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GREEN-API Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            gap: 20px;
+        }
+        .left-panel {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 250px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .response-box {
+            width: 400px;
+            height: 250px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background: #fff;
+            white-space: pre-wrap;
+            overflow-y: auto;
+        }
+    </style>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <input type="text" id="idInstance" placeholder="idInstance">
+            <input type="text" id="apiToken" placeholder="ApiTokenInstance">
+            <button onclick="getSettings()">getSettings</button>
+            <button onclick="getStateInstance()">getStateInstance</button>
+            <input type="text" id="phoneNumber" placeholder="77771234567">
+            <input type="text" id="message" placeholder="Hello World!">
+            <button onclick="sendMessage()">sendMessage</button>
+            <input type="text" id="fileUrl" placeholder="https://my.site.com/img/horse.png">
+            <button onclick="sendFileByUrl()">sendFileByUrl</button>
+        </div>
+        <div class="response-box" id="response">Ответ API...</div>
+    </div>
+</body>
+</html>
